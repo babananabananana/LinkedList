@@ -10,8 +10,8 @@ class LinkedListInterface
 
 public:
 
-//    LinkedListInterface(void) {};
-//    virtual ~LinkedListInterface(void) {};
+    LinkedListInterface(void) {};
+    virtual ~LinkedListInterface(void) {};
 
     /*
     insertHead
