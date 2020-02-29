@@ -1,15 +1,28 @@
 #ifndef LINKEDLIST_LINKEDLIST_H
 #define LINKEDLIST_LINKEDLIST_H
 #include "LinkedListInterface.h"
+#include <string>
 
 template<typename T>
 class LinkedList : public LinkedListInterface<T>
 {
+private:
+    struct node{
+        T val;
+        node* next = nullptr;
+        node* prev = nullptr;
+        node (T myNode) : val(myNode){};
+    };
+    node* head;
+    node* tail;
 
 public:
 
-    LinkedList(void) {};
-    virtual ~LinkedList(void) {};
+    LinkedList(void) {
+        head = nullptr;
+        tail = nullptr;
+    };
+    ~LinkedList(void) {};
 
     /*
     insertHead
@@ -18,7 +31,7 @@ public:
 
     Do not allow duplicate values in the list.
     */
-    virtual void insertHead(T value) = 0;
+    void insertHead(T value);
 
     /*
     insertTail
@@ -27,7 +40,7 @@ public:
 
     Do not allow duplicate values in the list.
     */
-    virtual void insertTail(T value) = 0;
+    void insertTail(T value);
 
     /*
     insertAfter
@@ -38,7 +51,7 @@ public:
     A node should only be added if the node whose value is equal to
     insertionNode is in the list. Do not allow duplicate values in the list.
     */
-    virtual void insertAfter(T value, T insertionNode) = 0;
+    void insertAfter(T value, T insertionNode);
 
     /*
     remove
@@ -47,14 +60,14 @@ public:
 
     The list may or may not include a node with the given value.
     */
-    virtual void remove(T value) = 0;
+    void remove(T value);
 
     /*
     clear
 
     Remove all nodes from the list.
     */
-    virtual void clear() = 0;
+    void clear();
 
     /*
     at
@@ -64,14 +77,14 @@ public:
 
     If the given index is out of range of the list, throw an out of range exception.
     */
-    virtual T at(int index) = 0;
+    T at(int index);
 
     /*
     size
 
     Returns the number of nodes in the list.
     */
-    virtual int size() = 0;
+    int size();
 
     /*
     toString
@@ -82,7 +95,7 @@ public:
     For example, a LinkedList containing the value 1, 2, 3, 4, and 5 should return
     "1 2 3 4 5"
     */
-    virtual string toString() = 0;
+    string toString();
 
 };
 
