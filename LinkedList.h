@@ -8,6 +8,7 @@ class LinkedList : public LinkedListInterface<T>
 {
 private:
     struct node{
+        //its got to be in this thing
         T val;
         node* next = nullptr;
         node* prev = nullptr;
