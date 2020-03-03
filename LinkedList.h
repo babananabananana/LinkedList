@@ -30,9 +30,12 @@ public:
     ~LinkedList(void) = default;
 
     bool valCheck(T value){
+        if (head == NULL) {
+            return true;
+        }
         node* cur = head;
         T temp;
-        while(cur){
+        while(cur == NULL){
             temp = cur -> val;
             if (temp == value){
                 return false;
@@ -72,18 +75,20 @@ public:
     Do not allow duplicate values in the list.
     */
     void insertTail(T value){
-        if (valCheck(value) == false){
+        if (!valCheck(value)) {
             return;
-        };
-        if(tail == nullptr && head == nullptr){
+        }
+        node* cur = tail;
+        if (tail == nullptr && head == nullptr) {
             tail = new node(value);
             head = tail;
+            return;
         }
-        else{
-            node* cur = tail;
+        else {
             cur -> next = new node(value);
             cur -> next -> prev = tail;
             tail = cur -> next;
+            return;
         }
 
     };
@@ -98,7 +103,7 @@ public:
     insertionNode is in the list. Do not allow duplicate values in the list.
     */
     void insertAfter(T value, T insertionNode){
-        if (valCheck(value) == false){
+        if (!valCheck(value)) {
             return;
         };
 
@@ -151,6 +156,10 @@ public:
                 return;
             }
         }
+        if (head == tail){
+            free(cur);
+            return;
+        }
         //if rmv val = head.
         if (head -> val == value){
             head = head -> next;
@@ -163,6 +172,9 @@ public:
         if (cur -> prev != nullptr){
             cur -> prev -> next = cur -> next;
         }
+//        if (tail -> val == value){
+//            tail = tail -> prev;
+//        }
         free(cur);
     };
 
