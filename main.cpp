@@ -46,46 +46,45 @@ int main() {
         if (temp == "STRING") { // first line of file determines the type of the linked list, either string or int
             isString = true;//set the isString to true
             sLL = new LinkedList<string>();
-//            std::cout << "'isString' flag set to true" << std::endl;
-//            std::cout << "The LinkedList for file " << i + 1 << " will contain strings" << std::endl;
+            std::cout << "'isString' flag set to true" << std::endl;
+            std::cout << "The LinkedList for file " << i + 1 << " will contain strings" << std::endl;
         }
-//        else { //the LL will hold ints
-//            isString = false;
-//            iLL = new LinkedList<int>();
-//            std::cout << "'isString' flag set to false" << std::endl;
-//            std::cout << "The LinkedList for file " << i + 1 << " will contain ints" << std::endl;
-//        }
-//
-//        std::cout << "Beginning out_file" << i + 1 << ".txt write" << std::endl;
-//        while (ta::getline(ifs, temp)) { // while there are more instructions to get,
-//            try {
-//                if (isString) {
-//                    parse_instruction(temp, ofs, sLL); // parse the instructions using string LinkedList
-//                }
-//                else {
-//                    parse_instruction(temp, ofs, iLL); // parse the instructions using int LinkedList
-//                }
-//            }
-//            catch (...) {
-//                std::cout << "An exception was thrown that shouldn't have been.\n";
-//                //return 0;//end the program
-//            }
-//        }
-//        std::cout << "File write complete" << std::endl << std::endl;
-//        if (iLL != NULL) {
-//            delete iLL;
-//            iLL = NULL;
-//        }
-//        if (sLL != NULL) {
-//            delete sLL;
-//            sLL = NULL;
-//        }
-//        ifs.close();
-//        ofs.close();
-//    }
-//    std::cout << "end" << std::endl; // indicate that the program has successfuly executed all instructions
-//    getchar();
+        else { //the LL will hold ints
+            isString = false;
+            iLL = new LinkedList<int>();
+            std::cout << "'isString' flag set to false" << std::endl;
+            std::cout << "The LinkedList for file " << i + 1 << " will contain ints" << std::endl;
+        }
+
+        std::cout << "Beginning out_file" << i + 1 << ".txt write" << std::endl;
+        while (ta::getline(ifs, temp)) { // while there are more instructions to get,
+            try {
+                if (isString) {
+                    parse_instruction(temp, ofs, sLL); // parse the instructions using string LinkedList
+                }
+                else {
+                    parse_instruction(temp, ofs, iLL); // parse the instructions using int LinkedList
+                }
+            }
+            catch (...) {
+                std::cout << "An exception was thrown that shouldn't have been.\n";
+                //return 0;//end the program
+            }
+        }
+        std::cout << "File write complete" << std::endl << std::endl;
+        if (iLL != NULL) {
+            delete iLL;
+            iLL = NULL;
+        }
+        if (sLL != NULL) {
+            delete sLL;
+            sLL = NULL;
+        }
+        ifs.close();
+        ofs.close();
     }
+    std::cout << "end" << std::endl; // indicate that the program has successfuly executed all instructions
+    getchar();
     return 0;
 }
 
