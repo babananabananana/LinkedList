@@ -86,7 +86,7 @@ int main() {
         ofs.close();
     }
     std::cout << "end" << std::endl; // indicate that the program has successfuly executed all instructions
-    getchar();
+//    getchar();
     return 0;
 }
 
