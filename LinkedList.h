@@ -27,7 +27,9 @@ public:
         head = nullptr;
         tail = nullptr;
     };
-    ~LinkedList(void) = default;
+    ~LinkedList(void){
+        clear();
+    };
 
     bool valCheck(T value){
         if (head == nullptr) {
@@ -171,7 +173,7 @@ public:
         }
         while (cur -> val != value){
             cur = cur -> next;
-            if (!cur){
+            if (cur == nullptr){
                 return;
             }
         }
@@ -194,7 +196,7 @@ public:
         if (tail -> val == value){
             tail = tail -> prev;
         }
-        free(cur);
+        delete(cur);
     };
 
     /*

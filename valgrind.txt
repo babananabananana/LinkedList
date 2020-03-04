@@ -1,154 +1,31 @@
-==4446== Memcheck, a memory error detector
-==4446== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==4446== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==4446== Command: ./a.out
-==4446== Parent PID: 3572
-==4446== 
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10D4DA: LinkedList<int>::remove(int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10C080: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b8ed60 is 0 bytes inside a block of size 24 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10D378: LinkedList<int>::insertAfter(int, int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10BFF5: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10D4DA: LinkedList<int>::remove(int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10D531: LinkedList<int>::clear() (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10C0EA: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b8ebe0 is 0 bytes inside a block of size 24 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10D1B5: LinkedList<int>::insertHead(int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10BEC2: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10CCE1: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B80F: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b94960 is 0 bytes inside a block of size 48 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10C865: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertTail(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B659: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10CCE1: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10CD69: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::clear() (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B888: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b94bc0 is 0 bytes inside a block of size 48 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10C8C1: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertTail(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B659: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 
-==4446== HEAP SUMMARY:
-==4446==     in use at exit: 15,445 bytes in 334 blocks
-==4446==   total heap usage: 1,949 allocs, 1,615 frees, 383,305 bytes allocated
-==4446== 
-==4446== 29 bytes in 1 blocks are definitely lost in loss record 2 of 13
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x4F6423C: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==4446==    by 0x10D8E0: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::node::node(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10C8CF: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertTail(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B659: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 93 bytes in 4 blocks are definitely lost in loss record 6 of 13
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x4F6423C: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
-==4446==    by 0x10D8E0: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::node::node(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10CADF: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertAfter(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B747: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 144 (24 direct, 120 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 13
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10D181: LinkedList<int>::insertHead(int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10BEC2: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 432 (48 direct, 384 indirect) bytes in 1 blocks are definitely lost in loss record 11 of 13
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10C865: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertTail(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B659: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 14,747 (48 direct, 14,699 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 13
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10C8C1: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertTail(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B659: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== LEAK SUMMARY:
-==4446==    definitely lost: 242 bytes in 8 blocks
-==4446==    indirectly lost: 15,203 bytes in 326 blocks
-==4446==      possibly lost: 0 bytes in 0 blocks
-==4446==    still reachable: 0 bytes in 0 blocks
-==4446==         suppressed: 0 bytes in 0 blocks
-==4446== 
-==4446== ERROR SUMMARY: 98 errors from 9 contexts (suppressed: 0 from 0)
-==4446== 
-==4446== 4 errors in context 1 of 9:
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10D4DA: LinkedList<int>::remove(int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10C080: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b8ed60 is 0 bytes inside a block of size 24 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10D378: LinkedList<int>::insertAfter(int, int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10BFF5: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 
-==4446== 10 errors in context 2 of 9:
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10D4DA: LinkedList<int>::remove(int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10D531: LinkedList<int>::clear() (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10C0EA: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b8ebe0 is 0 bytes inside a block of size 24 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10D1B5: LinkedList<int>::insertHead(int) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10BEC2: void parse_instruction<int>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<int>*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10AC3D: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 
-==4446== 15 errors in context 3 of 9:
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10CCE1: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10CD69: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::clear() (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B888: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b94bc0 is 0 bytes inside a block of size 48 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10C8C1: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertTail(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B659: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== 
-==4446== 64 errors in context 4 of 9:
-==4446== Mismatched free() / delete / delete []
-==4446==    at 0x4C30FA8: free (vg_replace_malloc.c:540)
-==4446==    by 0x10CCE1: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::remove(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B80F: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==  Address 0x5b94960 is 0 bytes inside a block of size 48 alloc'd
-==4446==    at 0x4C3045A: operator new(unsigned long) (vg_replace_malloc.c:344)
-==4446==    by 0x10C865: LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::insertTail(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10B659: void parse_instruction<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::basic_ofstream<char, std::char_traits<char> >&, LinkedList<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*) (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446==    by 0x10ABF0: main (in /home/spencer/CLionProjects/LinkedList/a.out)
-==4446== 
-==4446== ERROR SUMMARY: 98 errors from 9 contexts (suppressed: 0 from 0)
+Reading file1.txt...
+'isString' flag set to false
+The LinkedList for file 1 will contain ints
+Beginning out_file1.txt write
+File write complete
+
+Reading file2.txt...
+'isString' flag set to true
+The LinkedList for file 2 will contain strings
+Beginning out_file2.txt write
+File write complete
+
+Reading file3.txt...
+'isString' flag set to false
+The LinkedList for file 3 will contain ints
+Beginning out_file3.txt write
+File write complete
+
+Reading file4.txt...
+'isString' flag set to true
+The LinkedList for file 4 will contain strings
+Beginning out_file4.txt write
+File write complete
+
+Reading file5.txt...
+'isString' flag set to true
+The LinkedList for file 5 will contain strings
+Beginning out_file5.txt write
+File write complete
+
+end
